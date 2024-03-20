@@ -1,0 +1,37 @@
+<h3>Búsqueda de Geolocalización</h3>
+<div class="col-lg-6 mt-3 fv-row">
+    <div class="input-group input-group-lg">
+        <span class="input-group-text fw-bold fs-6">Latitud</span>
+        <input
+            type="text"
+            class="form-control form-control-lg"
+            placeholder="Ingrese Latitud"
+            [(ngModel)]="coordinates.lat"
+            maxlength="20"
+            required/>
+    </div>
+</div>
+<div class="col-lg-6 mt-3 fv-row">
+    <div class="input-group input-group-lg">
+        <span class="input-group-text fw-bold fs-6">Longitud</span>
+        <input
+            type="text"
+            class="form-control form-control-lg"
+            placeholder="Ingrese Longitud"
+            [(ngModel)]="coordinates.lng"
+            maxlength="20"
+            required/>
+    </div>
+</div>
+<div class="col-lg-6 mt-3 fv-row">
+    <div class="card-footer d-flex justify-content-end py-6 px-9">
+        <button class="btn btn-primary" (click)="getGeolocalization()">Consultar</button>
+    </div>
+</div>
+<div class="col-lg-6 mt-3 fv-row" *ngIf="showResponse">
+    <h4><b>Resultado de búsqueda:</b></h4>
+    <p><b>Latitud:</b> {{jsonResponse.lat}}</p>
+    <p><b>Longitud:</b> {{jsonResponse.lng}}</p>
+    <p><b>Descripcion:</b> {{jsonResponse.description}}</p>
+    <p><b>Observacion:</b> {{jsonResponse.observation}}</p>
+</div>
